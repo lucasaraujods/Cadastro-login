@@ -6,7 +6,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body >
     <!-- Link de refer~encia da biblioteca do fontawesome -->
     <script src="https://kit.fontawesome.com/505fbe0474.js" crossorigin="anonymous"></script>
 
@@ -18,7 +18,7 @@
                 <!-- Adicinado um nome a class de descrição primaria para o css nos dis paragrafos-->
                 <p class="description description-primary">Para se manter conectado conosco</p> 
                 <p class="description description-primary">faça login com suas informações pessoais</p>
-                <button class="btn btn-primary">Login</button>
+                <button id="signin" class="btn btn-primary">Login Conta</button> <!-- Adicionamos um id chamado signin para fazer o Dom no javascript e ter a funcionalidade do botão -->
             </div>
 
             <div class="second-column">
@@ -54,7 +54,7 @@
                         <i class="fa-solid fa-lock fa-sm"></i> <!-- colocando o item de cadeado antes da senha, usando o font awesome -->
                         <input type="password" placeholder="Senha">
                     </label>
-                    <button class="btn btn-second">Cadastrar</button> <!-- adicionando a classe o nome de btn- second para estilizar no css -->
+                    <button class="btn btn-second">Cadastrar Conta</button> <!-- adicionando a classe o nome de btn- second para estilizar no css e adicionamos tbm o di para o javascript, chamado signup-->
                 </form>
             </div><!-- second colomn -->            
         </div><!-- first content -->
@@ -63,31 +63,39 @@
 
             <div class="first-column">
 
-                <h2 class="title">Olá, Corredor</h2>
-                <p class="description">Insira os seus dados pessoais</p>
-                <p class="description">e começe a sua jornada conosco</p>
-                <button class="btn">Login</button>
+                <h2 class="title title-bemvindo">Olá, Corredor</h2>
+                <p class="description description-primary">Insira os seus dados pessoais</p>
+                <p class="description description-primary">e começe a sua jornada conosco</p>
+                <button id="signup" class="btn btn-primary">Cadastrar</button> <!-- adicionando a classe o nome de btn- second para estilizar no css e adicionamos tbm o di para o javascript, chamado signup-->
             </div>
 
             <div class="second-column">
-                <h2 class="title">Faça login </h2>
+                <h2 class="title title-second">Faça login </h2>
                 <div class="social-media">
                     <ul class="list-social-media"> 
-                        <li><a href="">gmail/google+</a></li>
+                        <li><a href=""><i class="fa-brands fa-google-plus-g fa-xl" style="color: #d30303;"></i></a></li>
                     </ul>
                 </div> <!-- social midia -->
-                <p class="description">Ou utilize o seu email para o login</p>
+                <p class="description description-second">Ou utilize o seu email para o login</p>
                 <form class="form">
-                   
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Senha">
-                    <a href="#">esqueceu senha?</a>
 
-                    <button class="btn">Login</button>
-                </form>
+                 
+                      
+                      <label class="label-input" for="">
+                          <i class="fa-solid fa-envelope fa-sm"></i><!-- colocando o item de envelope antes do email usando o font awesome -->
+                          <input type="email" placeholder="Email">
+                      </label>
+                     
+                      <label class="label-input" for="">
+                          <i class="fa-solid fa-lock fa-sm"></i> <!-- colocando o item de cadeado antes da senha, usando o font awesome -->
+                          <input type="password" placeholder="Senha">
+                      </label>
+                      <a class="password" href="#">esqueceu senha?</a>
+                      <button class="btn btn-second">Login</button> <!-- adicionando a classe o nome de btn- second para estilizar no css -->
+                  </form>
             </div><!-- second colomn -->       
         </div><!-- second conteint -->
     </div>
-       
+    <script src="js/app.js"></script>
 </body>
 </html>

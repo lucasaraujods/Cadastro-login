@@ -36,13 +36,17 @@ body{
     height: 100%;
     border-top-left-radius: 15px; /*siginifca que alteramos a borda para ter o arrendodamento nas quinas da de cima do lado esquerdo (top)*/
     border-bottom-left-radius: 15px; /*siginifca que alteramos a borda para ter o arrendodamento nas quinas da de baixo do lado esquerdo (bottom) */
-
+    left: 0;
 }
 
 .first-content{
 
     display: flex;
     
+}
+.first-content .second-column{
+
+    z-index:11;
 }
 .title{
    
@@ -89,12 +93,14 @@ body{
 .btn-primary{
     background-color: transparent;
     border: 1px solid #fff;
+    transition: background-color .5s; /* transição ddo mouse da duração passadno pelo login, toque suave*/
     
 }
 .btn-second{
 
     background-color: #58af9b;
     border: 1px solid #58af9b;
+   transition: background-color  .5s; /* transição ddo mouse da duração passadno pelo login, to que suave*/
 }
 .btn-second:hover{
 
@@ -109,12 +115,13 @@ body{
 .first-column{
 
     text-align: center;
-    flex: 1 0 auto;
+    width: 40%;
     z-index: 10;
+
 }
 .second-column{
 
-    flex: 2 0 auto;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -133,6 +140,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 55% ;
+    
 }
 .form input{
 
@@ -141,6 +149,11 @@ body{
     border: none;
     background-color: #ecf0f1;
 
+}
+input:-webkit-autofill
+{
+    -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+    -webkit-text-fill-color: #000 !important;
 }
 .label-input{
 
@@ -154,8 +167,54 @@ body{
     color: #7f8c8d;
     padding: 0 5px;
 }
+/* second content */
+
 .second-content{
 
     position: absolute;
-    display: none;
+    display: flex;
+}
+.second-content .first-column{ 
+    order: 2;
+    z-index: -1;
+}
+
+.second-content .second-column{
+    order: 1;
+    z-index: -1;
+}
+.password{
+
+    color: #34495e;
+    font-size: 14px;  
+    margin: 15px 0;
+    text-align: center; /* centralizando o esqueceu senha*/
+}
+.password::first-letter{ /*colocadno a letra do esqueceu senha com E maiusculo*/
+    text-transform: capitalize;
+}
+.sign-in-js .first-content .first-column, /*quando clicarmos no botão o js vai inserir uma classe no body para fazer a inversão e aparecer a tela de login pro usuário, ou seja o meu primeiro conteúdo é o que some e o segundo é o que aparece*/
+.sign-in-js .first-content .second-column{
+    z-index: -1;;
+}
+
+.sign-in-js .second-content .first-column,
+.sign-in-js .second-content .second-column{
+
+    z-index: 11;
+}
+
+.sign-in-js .content::before{
+    left: 60%;
+}
+
+.sign-up-js .second-content .first-column,
+.sign-up-js .second-content .second-column{
+
+    z-index: -1;
+}
+
+.sign-up-js .first-content .first-column, /*quando eu clicar em cadastarr o meu body vai receber a class sign up, e voltar para aréa do cadastro*/
+.sign-up-js .first-content .second-column{
+    z-index: 11;
 }
