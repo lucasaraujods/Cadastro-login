@@ -7,33 +7,54 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <!-- Link de refer~encia da biblioteca do fontawesome -->
+    <script src="https://kit.fontawesome.com/505fbe0474.js" crossorigin="anonymous"></script>
 
     <div class="container">
         <div class="content first-content">
             <div class="first-column">
 
                 <h2 class="title title-bemvindo">Seja Bem-Vindo!!</h2>
-                <p class="description">Para se manter conectado conosco</p>
-                <p class="description">faça login com suas informações pessoais</p>
+                <!-- Adicinado um nome a class de descrição primaria para o css nos dis paragrafos-->
+                <p class="description description-primary">Para se manter conectado conosco</p> 
+                <p class="description description-primary">faça login com suas informações pessoais</p>
                 <button class="btn btn-primary">Login</button>
             </div>
 
             <div class="second-column">
-                <h2 class="title">Cria sua Conta</h2>
+                <h2 class="title title-second">Cria sua Conta</h2>
                 <div class="social-media">
                     <ul class="list-social-media"> 
-                        <li><a href="">gmail/google+</a></li>
-                        <li><a href="">linkedin</a></li>
+                        <li class="item-social-media">
+                            <!-- Colocando o icone do google mais, usadno o font awesome, abaixo-->
+                            <a href=""><i class="fa-brands fa-google-plus-g fa-xl" style="color: #d30303;"></i></a>
+                        </li>
+                        <li>
+                            <a href=""></a>
+                        </li>
                     </ul>
                 </div> <!-- social midia -->
-                <p class="description">Ou utilize o seu email para o registro</p>
+                <!-- adicionando um nome na descrição como secunda para estilizar em css-->
+                <p class="description description-second">Ou utilize o seu email para o registro</p>
                 <form class="form">
-                    <input type="text" placeholder="Nome">
-                    <input type="email" placeholder="Email">
-                    <input type="password" placeholder="Senha">
 
-                    <button class="btn">Cadastrar</button>
+                  <!-- Criei uma label para jogar os inputs para dentro dela: -->
+                   <!-- Definimos uma class para todoas as label -->
+                    <label class="label-input" for=""> 
+                        <i class="fa-solid fa-user fa-sm icon-modify"></i><!-- colocando o item de user antes do nome, usando o font awesome e adicionando o nome icon-modify para utilizar no css  -->
+                        <input type="text" placeholder="Nome">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fa-solid fa-envelope fa-sm"></i><!-- colocando o item de envelope antes do email usando o font awesome -->
+                        <input type="email" placeholder="Email">
+                    </label>
+                   
+                    <label class="label-input" for="">
+                        <i class="fa-solid fa-lock fa-sm"></i> <!-- colocando o item de cadeado antes da senha, usando o font awesome -->
+                        <input type="password" placeholder="Senha">
+                    </label>
+                    <button class="btn btn-second">Cadastrar</button> <!-- adicionando a classe o nome de btn- second para estilizar no css -->
                 </form>
             </div><!-- second colomn -->            
         </div><!-- first content -->

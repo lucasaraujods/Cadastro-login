@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); /* Este é um comentário em CSS: link de refêrência do font google, opne sans, a fonte usada no projeto */
 *{
+    /*resetando o margem do navegador, colocadno os valores de cada igual a 0 */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,9 +19,9 @@ body{
     background-color: #ecf0f1;
 }
 .content {
-    border-radius: 15px;
     background-color: #fff;
-    width: 80%;
+    border-radius: 15px;
+    width: 960px;
     height: 50%;
     justify-content: space-between;
     align-items: center;
@@ -33,13 +34,15 @@ body{
     background-color: #58af9b;
     width: 40%;
     height: 100%;
+    border-top-left-radius: 15px; /*siginifca que alteramos a borda para ter o arrendodamento nas quinas da de cima do lado esquerdo (top)*/
+    border-bottom-left-radius: 15px; /*siginifca que alteramos a borda para ter o arrendodamento nas quinas da de baixo do lado esquerdo (bottom) */
 
 }
 
 .first-content{
 
     display: flex;
-
+    
 }
 .title{
    
@@ -53,11 +56,21 @@ body{
     color: #fff;
 
 }
+.title-second{
+    
+    color: #58af9b;
+}
 .description{
     color: #fff;
     font-size: 14px;
     font-weight: 300;
     line-height: 30px;
+}
+.description-primary{
+    color: #fff;
+}
+.description-second{
+    color: #95a5a6;
 }
 .btn{
 
@@ -68,11 +81,26 @@ body{
     padding: 10px 50px;
     cursor: pointer;
     font-weight: bold;
+    width: 150px;
+    align-self: center; /* centralizadno botão de de criar a conta */
+    border: none; /* usando o (border: none) para tirar a borda padrão do navgador*/
+    margin-top: 1rem /* duvida se deixa essa margem aqui ou não do botão para os inputs: margin-top: 1rem*/
 }
 .btn-primary{
     background-color: transparent;
     border: 1px solid #fff;
     
+}
+.btn-second{
+
+    background-color: #58af9b;
+    border: 1px solid #58af9b;
+}
+.btn-second:hover{
+
+    background-color: #fff;
+    border: 1px solid #58af9b;
+    color: #58af9b;
 }
 .btn-primary:hover{
     background-color: #fff ;
@@ -87,14 +115,44 @@ body{
 .second-column{
 
     flex: 2 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .list-social-media{
     display: flex;
+    list-style-type: none;
+}
+.item-social-media a{
+
+    border-radius: 1px solid #bdc3c7;
+    color: #95a5a6;
 }
 .form{
     display: flex;
     flex-direction: column;
+    width: 55% ;
+}
+.form input{
 
+    width: 100%; 
+    height: 45px;
+    border: none;
+    background-color: #ecf0f1;
+
+}
+.label-input{
+
+    background-color: #ecf0f1;
+    display: flex; /* colocadno os icones alinhados*/
+    align-items: center; 
+    margin: 8px;
+}
+.icon-modify{
+
+    color: #7f8c8d;
+    padding: 0 5px;
 }
 .second-content{
 
