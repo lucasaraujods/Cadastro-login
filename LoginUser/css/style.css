@@ -97,7 +97,7 @@ body{
     
 }
 .btn-second{
-
+    margin: 12px;
     background-color: #58af9b;
     border: 1px solid #58af9b;
    transition: background-color  .5s; /* transição ddo mouse da duração passadno pelo login, to que suave*/
@@ -198,14 +198,28 @@ input:-webkit-autofill
     z-index: -1;;
 }
 
-.sign-in-js .second-content .first-column,
+
 .sign-in-js .second-content .second-column{
 
     z-index: 11;
 }
-
+.sign-in-js .second-content .first-column{
+    z-index: 13;
+}
 .sign-in-js .content::before{
     left: 60%;
+    border-top-left-radius: 0; 
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px; 
+    border-bottom-right-radius: 15px;
+    animation: slidein 3s;
+
+    z-index: 12;
+}
+
+.sign-up-js .content::before{
+    animation: slideout 3s;
+    z-index: 12;
 }
 
 .sign-up-js .second-content .first-column,
@@ -214,7 +228,128 @@ input:-webkit-autofill
     z-index: -1;
 }
 
-.sign-up-js .first-content .first-column, /*quando eu clicar em cadastarr o meu body vai receber a class sign up, e voltar para aréa do cadastro*/
+ /*quando eu clicar em cadastarr o meu body vai receber a class sign up, e voltar para area do cadastro*/
 .sign-up-js .first-content .second-column{
     z-index: 11;
+}
+
+.sign-up-js .first-content .first-column{
+    z-index: 13;
+}
+
+/* Deslocamento conteúdo atrás do content:before*/
+.sign-in-js .first-content .second-column{
+
+    z-index: -1;
+    position: relative;
+    animation: deslocamento 3s;
+}
+
+.sign-up-js .second-content .second-column{
+
+    position: relative;
+    z-index: -1;
+    animation: deslocamentoDir 3s;
+}
+
+/*Animação CSS para o conteúdo*/
+
+@keyframes deslocamentoEsq {
+    /* de onde:*/
+    from{
+        left: 0;
+        opacity: 1;
+        z-index: 12; 
+    }
+    25%{
+        left: -80px;
+        opacity: .5;
+       
+    }
+    50%{
+        left: -100px;
+        opacity: .2;
+       
+    }
+    /*para*/
+    to{
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes deslocamentoDir{
+
+    from{
+        left: 0;
+        z-index: 12;
+    }
+    25%{
+        left: 80px;
+        
+    }
+    50%{
+        left: 100px;
+    }
+    to{
+        left: 110px;
+        z-index: -1;
+    }
+}
+
+/*Animação css */
+
+@keyframes slidein{
+    /* usamos from para saber de onde ele vem e to para saber o final dele */
+    from{
+        left: 0;
+        width: 40%;
+    }
+    /*ele vai sair do from com 0 e quando ele atingir 25% executa o código que está dentro do 25%*/
+    25%{
+        left:5%;
+        width: 50%;
+        
+    }
+    /* quando ele sair do 25% e atingir o 50 % ele executa o código do 50% */
+    50%{
+        left: 25%;
+        width: 60%;
+    }
+    75%{
+        left: 45%;
+        width: 50%;
+    }
+    to{
+        left:60%;
+        width: 40%;
+    }
+}
+
+@keyframes slideout{
+    /* usamos from para saber de onde ele vem e to para saber o final dele */
+    from{
+        left: 60%;
+        width: 40%;
+    }
+    /*ele vai sair do from com 0 e quando ele atingir 25% executa o código que está dentro do 25%*/
+    25%{
+        left:45%;
+        width: 50%;
+        
+    }
+    /* quando ele sair do 25% e atingir o 50 % ele executa o código do 50% */
+    50%{
+        left: 25%;
+        width: 60%;
+    }
+    75%{
+        left: 5%;
+        width: 50%;
+    }
+    to{
+        left:0%;
+        width: 40%;
+    }
 }
